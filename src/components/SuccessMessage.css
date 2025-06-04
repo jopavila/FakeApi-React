@@ -1,0 +1,40 @@
+.success-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000; /* Maior que o z-index do ConfirmDialog */
+}
+
+.success-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.success-content p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.success-content button {
+  padding: 5px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+.success-content button:hover {
+  background-color: #e0e0e0;
+}
