@@ -10,7 +10,7 @@ export default function SuccessMessage({ message, onClose }: SuccessMessageProps
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
-    }, 3000); // Fecha automaticamente após 3 segundos
+    }, 3000); 
     return () => clearTimeout(timer);
   }, [onClose]);
 

@@ -11,7 +11,7 @@ export const deleteUser = async (id: number) => {
 
 export const updateUser = async (id: number, userData: { first_name: string; last_name: string; email: string }) => {
   const response = await api.put(`/users/${id}`, userData);
-  // Simula a resposta da API com os dados atualizados (ReqRes não retorna o usuário atualizado)
+  
   return {
     id,
     ...userData,

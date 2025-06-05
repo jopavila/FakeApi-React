@@ -1,54 +1,101 @@
-# React + TypeScript + Vite
+Projeto de Gestão de Usuários
+Este é um projeto de teste desenvolvido para gerenciar usuários, incluindo funcionalidades de login, listagem, edição e exclusão de usuários. O projeto utiliza React, TypeScript, e uma API fake (ReqRes) para simulação de backend.
+Requisitos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Node.js: Versão 16.x ou superior.
+npm: Versão 6.x ou superior (ou yarn como alternativa).
+Git: Para clonar o repositório.
+Acesso à internet (para carregar a API fake e bibliotecas via CDN).
 
-Currently, two official plugins are available:
+Estrutura do Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+src/pages/: Contém as páginas principais (Login, Lista de Usuários, etc.).
+src/components/: Componentes reutilizáveis (Botões, Modais, etc.).
+src/services/: Lógica de interação com a API.
+src/types/: Definições de tipos TypeScript.
+public/: Arquivos estáticos (ícones, etc.).
 
-## Expanding the ESLint configuration
+Instalação
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Clone o repositório:
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Instale as dependências:
+npm install
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Ou, se preferir usar yarn:
+yarn install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Configure variáveis de ambiente (opcional):
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Crie um arquivo .env na raiz do projeto com as seguintes variáveis, se necessário:REACT_APP_API_URL=https://reqres.in/api
+
+Caso não configure, a aplicação usará a URL padrão da API fake diretamente no código.
+
+Execução
+
+Inicie o servidor de desenvolvimento:
+npm start
+
+Ou com yarn:
+yarn start
+
+Acesse a aplicação:
+
+Abra o navegador e vá para http://localhost:3000.
+A página de login será exibida. Use as credenciais padrão:
+Usuário: eve.holt@reqres.in
+Senha: cityslicka
+
+Funcionalidades
+
+Login: Autenticação básica com redirecionamento para a lista de usuários.
+Lista de Usuários: Exibe uma tabela com nome, sobrenome, email, e opções de edição.
+Edição de Usuários: Modal para editar nome, sobrenome e email, com botão "Excluir" vermelho para remover o usuário.
+Exclusão: Confirmação via pop-up antes de excluir um usuário.
+Mensagens de Sucesso: Pop-up estilizado após edições ou exclusões bem-sucedidas.
+
+Comandos Úteis
+
+Construir o projeto para produção:
+npm run build
+
+Gera uma versão otimizada na pasta build/.
+
+Executar testes (se aplicável):
+npm test
+
+Nota: Este projeto não inclui testes unitários; adicione-os conforme necessário.
+
+Analisar o tamanho do bundle:
+npm run build -- --stats
+
+Estrutura do Código
+
+Componentes Principais:
+
+Button.tsx: Componente global para botões com variantes (primary, secondary, danger).
+EditUserModal.tsx: Modal para edição de usuários com opção de exclusão.
+ConfirmDialog.tsx: Pop-up de confirmação para exclusão.
+SuccessMessage.tsx: Pop-up para mensagens de sucesso.
+
+Serviços:
+
+userService.ts: Funções para interagir com a API fake (getUsers, updateUser, deleteUser).
+
+Contribuição
+
+Faça um fork do repositório.
+Crie uma branch para suas alterações:git checkout -b feature/nova-funcionalidade
+
+Commit suas mudanças:git commit -m "Descrição da mudança"
+
+Envie para o repositório remoto:git push origin feature/nova-funcionalidade
+
+Abra um pull request.
+
+Licença
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+Agradecimentos
+Agradecimentos ao suporte recebido durante o desenvolvimento, que ajudou a tornar o projeto mais robusto e estilizado!

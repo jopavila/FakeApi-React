@@ -23,7 +23,7 @@ function EditUserPage() {
     try {
       const user = await getUserById(userId);
       setFirstName(user.first_name);
-      setLastName(user.last_name || ''); // Garante que last_name não seja undefined
+      setLastName(user.last_name || '');
       setEmail(user.email);
     } catch (err) {
       setError('Falha ao carregar usuário.');
