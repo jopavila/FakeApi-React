@@ -18,7 +18,7 @@ public/: Arquivos estáticos (ícones, etc.).
 Instalação
 
 Clone o repositório:
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/jopavila/FakeApi-React.git
 cd seu-repositorio
 
 Instale as dependências:
@@ -43,7 +43,7 @@ yarn start
 
 Acesse a aplicação:
 
-Abra o navegador e vá para http://localhost:3000.
+Abra o navegador e vá para http://localhost:5173/ (padrão react)
 A página de login será exibida. Use as credenciais padrão:
 Usuário: eve.holt@reqres.in
 Senha: cityslicka
